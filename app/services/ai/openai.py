@@ -1,8 +1,8 @@
 # app/services/ai/openai.py
-import os
 from openai import OpenAI
 from app.services.ai.base import AIEngine
 from app.core.config import settings
+
 
 class OpenAIAIEngine(AIEngine):
     def __init__(self):
@@ -15,23 +15,28 @@ class OpenAIAIEngine(AIEngine):
             response = self.client.chat.completions.create(
                 model="gpt-4",
                 messages=[
-                    {"role": "system", "content": "You are an AI writing assistant that reviews product feedback."},
-                    {"role": "user", "content": prompt}
+                    {
+                        "role": "system",
+                        "content": "You are an AI writing assistant that "
+                        "reviews product feedback.",
+                    },
+                    {"role": "user", "content": prompt},
                 ],
-                temperature=0.4
+                temperature=0.4,
             )
 
             result = response.choices[0].message.content
 
             # Try parsing result as JSON
             import json
+
             return json.loads(result)
 
         except Exception as e:
             return {
                 "sentiment": "unknown",
                 "readability_score": None,
-                "suggestions": [f"AI error: {str(e)}"]
+                "suggestions": [f"AI error: {str(e)}"],
             }
 
     def _build_prompt(self, text: str) -> str:
@@ -42,5 +47,5 @@ class OpenAIAIEngine(AIEngine):
             "- readability_score: a number from 0 to 100\n"
             "- suggestions: a list of tips to improve the review\n\n"
             "Respond only with a valid JSON object.\n"
-            f"Here's the review:\n\"\"\"\n{text}\n\"\"\""
+            f'Here\'s the review:\n"""\n{text}\n"""'
         )
