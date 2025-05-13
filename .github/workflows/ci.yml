@@ -52,3 +52,5 @@ jobs:
           flags: unittests
           name: codecov-report
           verbose: true
+          override_branch: ${{ github.ref_name }}
+          override_commit: ${{ github.sha }}
