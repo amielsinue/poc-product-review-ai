@@ -1,13 +1,18 @@
 .PHONY: help install run test lint format clean
 
+
 help:
 	@echo "Available commands:"
-	@echo "  make install      - Install project dependencies"
-	@echo "  make run          - Run the FastAPI development server"
-	@echo "  make test         - Run all unit and integration tests"
-	@echo "  make lint         - Check code style with flake8"
-	@echo "  make format       - Format code with black"
-	@echo "  make clean        - Remove Python cache files and folders"
+	@echo "  make install       - Install project dependencies"
+	@echo "  make run           - Run the FastAPI development server"
+	@echo "  make test          - Run all unit and integration tests"
+	@echo "  make lint          - Check code style with flake8"
+	@echo "  make format        - Format code with black"
+	@echo "  make clean         - Remove Python cache files and folders"
+	@echo "  make coverage      - Run tests with coverage report (term output)"
+	@echo "  make docker-build  - Build the Docker container"
+	@echo "  make docker-up     - Start the application with docker-compose"
+	@echo "  make docker-down   - Stop docker-compose containers"
 
 install:
 	pip install -r requirements.txt
