@@ -36,9 +36,9 @@ htmlcov/
 .tox/
 .nox/
 .coverage
+coverage.xml
 .cache
 nosetests.xml
-coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
@@ -61,3 +61,5 @@ docker-compose.override.yml
 
 # VSCode
 .vscode/
+
+.idea
