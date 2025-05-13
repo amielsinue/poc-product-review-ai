@@ -45,3 +45,8 @@ pytest
 
 ## AI Tools Used
 Used **GitHub Copilot** to assist in generating function templates, async migration, test structures, and Docker setup. Copilot accelerated development and ensured consistency.
+
+
+## 📖 Learn More
+
+👉 [Development Process](./DEVELOPMENT.md)
