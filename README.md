@@ -19,6 +19,10 @@ docker-compose up --build
 
 ## API Usage
 `POST /analyze`
+```text
+X-API-Key: secret123
+```
+
 ```json
 {
   "content": "Great product, I loved it!"

@@ -11,6 +11,7 @@ class AIEngineType(str, Enum):
 class Settings(BaseSettings):
     AI_ENGINE: AIEngineType = AIEngineType.MOCK
     OPENAI_API_KEY: str = ""
+    API_KEY: str = "your_api_key_here"  # Replace with your actual API key
 
     model_config = {"env_file": ".env"}
 
