@@ -10,16 +10,9 @@ router = APIRouter()
 
 @router.post("/analyze")
 async def analyze(
-    review: ReviewRequest, engine: str = Query("env"), _: str = Depends(verify_api_key)
+    review: ReviewRequest, _: str = Depends(verify_api_key)
 ):
     if not review.content.strip():
         raise HTTPException(status_code=400, detail="Review content cannot be empty")
 
-    if engine == "openai":
-        selected = OpenAIAIEngine()
-    elif engine == "mock":
-        selected = MockAIEngine()
-    else:
-        selected = ai_engine
-
-    return await selected.get_feedback(review.content)
+    return await ai_engine.get_feedback(review.content)
