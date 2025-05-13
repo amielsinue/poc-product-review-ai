@@ -1,7 +1,7 @@
 
 # AI Review Feedback API
 ![CI](https://github.com/amielsinue/poc-product-review-ai/actions/workflows/ci.yml/badge.svg)
-![Coverage](https://img.shields.io/badge/coverage-90%25-brightgreen)
+[![codecov](https://codecov.io/gh/amielsinue/poc-product-review-ai/branch/main/graph/badge.svg)](https://codecov.io/gh/amielsinue/poc-product-review-ai)
 
 This service accepts user-submitted product reviews and returns structured AI-like feedback including sentiment, readability score, and improvement suggestions.
 
